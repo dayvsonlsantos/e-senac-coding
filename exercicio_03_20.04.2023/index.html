@@ -1,0 +1,264 @@
+<!-- Desenvolvedor: Dayvson Lima -->
+<!-- Linkedin: https://www.linkedin.com/in/dayvsonlimasantos-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="w-full h-screen">
+    <main class="w-9/12 h-5/6 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 overflow-auto">
+        <form id="formulario" class="w-full h-screen">
+            <fieldset class="p-8 bg-white border border-gray-200 rounded-lg">
+                <legend class="uppercase tracking-wide text-gray-600 text-sm font-semibold mb-2">Formulário de Freelancer</legend>
+
+                <!-- Nome e Sobrenome -->
+                <aside class="flex flex-wrap -mx-3 mb-6">
+                    <!-- Input nome -->
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label for="nome" class="block uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Nome <span class="text-purple-400 text-sm">*</span></label>
+
+                        <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                placeholder="Insira seu nome"
+                                required
+                                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                        >
+                    </div>
+
+                    <!-- Input sobrenome -->
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label for="sobrenome" class="block uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Sobrenome <span class="text-purple-400 text-sm">*</span></label>
+                        <input
+                                type="text"
+                                id="sobrenome"
+                                name="sobrenome"
+                                placeholder="Insira seu sobrenome"
+                                required
+                                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                        >
+                    </div>
+                </aside>
+
+                <!-- Telefone e E-mail -->
+                <aside class="flex flex-wrap -mx-3 mb-6">
+                    <!-- Input telefone -->
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label for="telefone" class="block uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Telefone <span class="text-purple-400 text-sm">*</span></label>
+                        <input
+                                type="tel"
+                                id="telefone"
+                                name="telefone"
+                                placeholder="(00) 00000-0000"
+                                required
+                                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                        >
+                    </div>
+
+                    <!-- Input email -->
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label for="email" class="block uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">E-mail <span class="text-purple-400 text-sm">*</span></label>
+                        <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Insira seu e-mail"
+                                required
+                                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                        >
+                    </div>
+                </aside>
+
+                <!-- Input mensagem -->
+                <div class="w-full mb-6">
+                        <label for="mensagem" class="block uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Mensagem <span class="text-purple-400 text-sm">*</span></label>
+                        <textarea
+                                id="mensagem"
+                                name="mensagem"
+                                rows="3"
+                                cols="40"
+                                maxlength="255"
+                                required
+                                class="bg-gray-200 appearance-none border border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                        ></textarea>
+                    </div>
+
+                <!-- Select lingua -->
+                <div class="w-full mb-6">
+                    <label for="lingua" class="block uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Lingua</label>
+                    <select id="lingua" name="lingua" class="block cursor-pointer appearance-none w-full bg-white border border-solid border-gray-200 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline hover:border-purple-500">
+                        <option value="" disabled selected>Selecione o seu idioma</option>
+                        <option value="Inglês">Inglês</option>
+                        <option value="Espanhol">Espanhol</option>
+                        <option value="Francês">Francês</option>
+                        <option value="Português (pt-br)">Português (pt-br)</option>
+                    </select>
+
+                </div>
+
+                <!-- Input file -->
+                <div class="w-full mb-6">
+                    <label for="arquivo" class="block uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Protótipo (Requisitos)</label>
+                    <!-- Limitar para os tipos: PDF, DOC, DOCX, JPEG ou PNG -->
+                    <!-- Link: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept -->
+                    <input
+                            type="file"
+                            id="arquivo"
+                            name="arquivo"
+                            accept=".doc, .docx, .pdf, .jpeg, .png"
+                            class="relative text-gray-600 m-0 w-full flex-auto rounded-lg border border-solid border-gray-200 px-3 py-[0.32rem] cursor-pointer bg-gray-50 transition duration-300 ease-in-out file:cursor-pointer file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-gray-200 file:px-3 file:py-[0.32rem] file:text-gray-500 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-gray-600 hover:file:text-gray-200 focus:border-primary focus:text-gray-400 focus:shadow-te-primary focus:outline-none"
+                    >
+                    <span class="mt-1 text-sm text-gray-500 text-xs" id="file_input_help">PDF, DOC, DOCX, JPEG ou PNG</span>
+                </div>
+
+                <!-- Linguagem e Banco de dados -->
+                <aside class="flex flex-wrap -mx-3 mb-6">
+                    <!-- Select Linguagem -->
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label for="linguaguem" class="block uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">As linguagens que você prefere ?</label>
+                        <div class="flex flex-col">
+                            <select id="linguaguem" name="linguaguem" multiple class="overflow-hidden text-center block cursor-pointer appearance-none w-full bg-white border border-solid border-gray-200 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline hover:border-purple-500">
+                                <option value="Java">Java</option>
+                                <option value="C">C</option>
+                                <option value="C++">C++</option>
+                                <option value="PHP">PHP</option>
+                            </select>
+                            <small class="mt-1 text-sm text-gray-500 text-xs text-center mt-2">(Para fazer várias escolhas, mantenha a tecla CTRL pressionada)</small>
+                        </div>
+                    </div>
+
+                    <!-- Radio Banco de dados -->
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+
+                        <h3 class="block uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Banco de Dados</h3>
+                        <div class="flex flex-row justify-evenly">
+                            <ul class="cursor-pointer w-40 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg">
+                                <li class="cursor-pointer w-full border-b border-gray-200 rounded-t-lg">
+                                    <div class="cursor-pointer flex items-center pl-3">
+                                        <input id="MySQL" type="radio" value="MySQL" name="banco_de_dados" class="cursor-pointer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
+                                        <label for="MySQL" class="cursor-pointer w-full py-3 ml-2 text-sm font-medium text-gray-900">MySQL</label>
+                                    </div>
+                                </li>
+                                <li class="cursor-pointer w-full border-b border-gray-200 rounded-t-lg">
+                                    <div class="cursor-pointer flex items-center pl-3">
+                                        <input id="PostgreSQL" type="radio" value="PostgreSQL" name="banco_de_dados" class="cursor-pointer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <label for="PostgreSQL" class="cursor-pointer w-full py-3 ml-2 text-sm font-medium text-gray-900">PostgreSQL</label>
+                                    </div>
+                                </li>
+                                <li class="cursor-pointer w-full border-b border-gray-200 rounded-t-lg">
+                                    <div class="cursor-pointer flex items-center pl-3">
+                                        <input id="MongoDB" type="radio" value="MongoDB" name="banco_de_dados" class="cursor-pointer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <label for="MongoDB" class="cursor-pointer w-full py-3 ml-2 text-sm font-medium text-gray-900">MongoDB</label>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="cursor-pointer w-40 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg">
+                                <li class="cursor-pointer w-full border-b border-gray-200 rounded-t-lg">
+                                    <div class="cursor-pointer flex items-center pl-3">
+                                        <input id="N/A" type="radio" value="N/A" name="banco_de_dados" class="cursor-pointer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <label for="N/A" class="cursor-pointer w-full py-3 ml-2 text-sm font-medium text-gray-900">N/A</label>
+                                    </div>
+                                </li>
+                                <li class="cursor-pointer w-full border-b border-gray-200 rounded-t-lg">
+                                    <div class="cursor-pointer flex items-center pl-3">
+                                        <input id="Outra" type="radio" value="Outra" name="banco_de_dados" class="cursor-pointer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <label for="Outra" class="cursor-pointer w-full py-3 ml-2 text-sm font-medium text-gray-900">Outra</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </aside>
+
+                <!-- Checkbox Turno -->
+                <div class="w-full mb-6">
+                    <h3 class="block uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Turno para Reuniões *</h3>
+                    <ul class="cursor-pointer items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex">
+                        <li class="cursor-pointer w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
+                            <div class="flex items-center pl-3 cursor-pointer">
+                                <input id="manha" type="checkbox" name="turno_reunioes" value="manha" class="cursor-pointer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                <label for="manha" class="cursor-pointer w-full py-3 ml-2 text-sm font-medium text-gray-900">Manhã</label>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
+                            <div class="cursor-pointer flex items-center pl-3">
+                                <input id="tarde" type="checkbox" name="turno_reunioes" value="tarde" class="cursor-pointer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                <label for="tarde" class="cursor-pointer w-full py-3 ml-2 text-sm font-medium text-gray-900">Tarde</label>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
+                            <div class="cursor-pointer flex items-center pl-3">
+                                <input id="noite" type="checkbox" name="turno_reunioes" value="noite" class="cursor-pointer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                <label for="noite" class="cursor-pointer w-full py-3 ml-2 text-sm font-medium text-gray-900">Noite</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Time e Date -->
+                <aside class="flex flex-wrap -mx-3 mb-6">
+                    <!-- Input Horário -->
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label for="tempo" class="block uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Horário Sugerido</label>
+                        <input
+                                class="cursor-pointer w-40 py-2 px-4 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg"
+                                type="time"
+                                id="tempo"
+                                name="tempo">
+                    </div>
+
+                    <!-- Input Data -->
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label for="data" class="block uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Data Prevista Entrega <span class="text-purple-400 text-sm">*</span></label>
+                        <input
+                                class="cursor-pointer w-40 py-2 px-4 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg"
+                                type="date"
+                                id="data"
+                                name="data"
+                                required>
+                    </div>
+
+                </aside>
+
+                <!-- Footer do Form -->
+                <footer class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 flex justify-evenly">
+
+                        <!-- Input Reset -->
+                        <input
+                                class="cursor-pointer w-40 py-2 px-4 text-sm font-medium text-gray-900 bg-gray-100 border border-gray-200 rounded-lg"
+                                type="reset"
+                                id="apagar"
+                                name="apagar"
+                                value="Apagar">
+
+                        <!-- Input Submit -->
+                        <input
+                                class="cursor-pointer w-40 py-2 px-4 text-sm font-medium text-gray-900 bg-purple-300 border border-gray-200 rounded-lg"
+                                type="submit"
+                                id="Enviar"
+                                name="Enviar"
+                                value="Enviar">
+                    </div>
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <p class="text-center mt-1 text-sm text-gray-500"><span class="text-purple-400 text-sm">*</span>Campos Obrigatórios</p>
+                    </div>
+                </footer>
+
+            </fieldset>
+        </form>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+
+    <script src="./js/masks.js"></script>
+    <script src="./js/select_checkbox.js"></script>
+</body>
+</html>
