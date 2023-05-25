@@ -4,11 +4,7 @@ import java.util.Date;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
 
-import Model.Agencia;
-import Model.Cliente;
-import Model.Conta;
-import Model.Endereco;
-import Model.Transacao;
+import Model.*;
 
 public class Principal {
 
@@ -27,13 +23,14 @@ public class Principal {
 		endAna = new Endereco("PE", "Recife", "V�zea", "Av Polid�rio", 134, "Ap 502", "55640-010");
 		Cliente anaCarla = new Cliente("123.321.222-11", "Ana Carla dos Santos", new Date("04/01/2000"), 4321123, "anacsantos@gmail.com", "(81)99998-89889", endAna);
 		endAna.setComplemento("Ap 503");
-		Conta contaAna = new Conta(anaCarla, 321456, agSenac, data, 3456.50, 500);
 
+		Conta contaAna = new ContaCorrente(anaCarla, 321456, agSenac, data, 3456.50, 500, 0.005);
+		//Não precisa alterar esse "Conta" da frente, pois contaPoupança Herda de Conta;
 
 		Endereco endVinicius = new Endereco("PE", "Recife", "Engenho do Meio", "Rua Berna", 161, "Casa A", "55123-010");
 		Cliente vinicius = new Cliente("123.444.222-11", "Vinícius Sousa", new Date("11/07/2001"), 4521123, "viniciussousinha@gmail.com", "(81)99997-89889", endVinicius);
 		endAna.setComplemento("Ap 503");
-		Conta contaVinicius = new Conta(vinicius, 321458, agSenac, data, 34.50, 500);
+		Conta contaVinicius = new ContaPoupanca(vinicius, 321458, agSenac, data, 34.50, 0, 0.003);
 
 		//System.out.println(contaAna.getSaldo());
 
@@ -41,7 +38,15 @@ public class Principal {
 		contaAna.sacar(130);
 
 		contaAna.depositar(3500);
-		
+
+		//Cast, Fazendo com que contaAna não seja mais reconhecida como Conta, e sim ContaCorrente.
+			//Basicamente enquanto o super olha para cima (o pai), o cash olha para baixo (filho)
+		System.out.println(((ContaCorrente) contaAna).getTaxaManutencao());  //Imprimindo taxa de manutenção
+			//Outra opção teria sido feito:
+				//ContaCorrente contaAna = new ContaCorrente(anaCarla, 321456, agSenac, data, 3456.50, 500, 0.005);
+			//Em vez de:
+				//Conta contaAna = new ContaCorrente(anaCarla, 321456, agSenac, data, 3456.50, 500, 0.005);
+
 		// System.out.println(endAna.getCidade() + " | " + endAna.getBairro() + " | " + endAna.getComplemento());
 		// System.out.println(endAna.toString());
 

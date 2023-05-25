@@ -4,20 +4,22 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Conta {
+public abstract class Conta {
 
 	private Cliente cliente;
 	private int numero;
 	private Agencia ag;
 	private Date dataCriacao;
 	private double saldo;
-	private double limite;
+	private double limite; //Cheque Especial
 	private boolean status;
 	private List<Transacao> transacoes;
 
 	public Conta() {
 		// TODO Auto-generated constructor stub
-		super();
+		super(); //boa prática
+		this.status = true; //Acessa os seus atributos
+		this.transacoes = new ArrayList<Transacao>();	//Iniciando o array list de Transações
 	}
 
 	public Conta(Cliente cliente, int numero, Agencia ag, Date dataCriacao, double saldo, double limite) {
